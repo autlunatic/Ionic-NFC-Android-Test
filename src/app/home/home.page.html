@@ -1,20 +1,29 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Blank
+      NFC Android Test
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <ion-card class="welcome-card">
+    <p>
+      <ion-button (click)="startNFC()">start NFC readermode</ion-button>
+    </p>
+    <p>
+      <ion-button (click)="startNFCListener()">start NFC listener</ion-button>
+    </p>
+    <p>
+      <ion-button (click)="startInterval()">start Interval</ion-button>
+    </p>
+    <p>
+      <ion-button (click)="doNothing()">do nothing</ion-button>
+    </p>
+    <p>
+      {{nfcReading}}
+      {{nfcTag}}
+      <ion-spinner *ngIf="nfcReading"> </ion-spinner>
+    </p>
+  </ion-card>
 </ion-content>
